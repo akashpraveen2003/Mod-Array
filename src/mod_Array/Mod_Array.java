@@ -29,18 +29,18 @@ public class Mod_Array {
 
 	private static void calculate_mod_array(int[] array, int divisor) {
 		
-		int power=1;			// Power initialized to 1
-		int result=0;			// Final value the result stores
+		int power=1;						// Power initialized to 1
+		int result=0;						// Final value the result stores
 		
 		for(int i=array.length-1;i>=0;i--)			// Iterating from the last digit
 		{
-			int number=array[i]%10;					// Getting the last digit
+			int number=array[i]%10;				// Getting the last digit
 			
 			int temp=number*(power%divisor);		// Since,Number is a single value, we mod the power with divisor
 			
 			result=(result+temp)%divisor;			// Then we add the mod value of the number to the result
 			
-			power=(power%divisor)*10;				// Mod Power with Divisor to avoid overflow and for next digit multiply by 10
+			power=(power%divisor)*10;			// Mod Power with Divisor to avoid overflow and for next digit multiply by 10
 			
 		}
 		
